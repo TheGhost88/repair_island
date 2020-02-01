@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public OnItemChanged onItemChangedCallback;
 
     public int space = 10;
+    public int maxItemsInStack = 100;
 
     public List<Item> items = new List<Item>();
     public List<int> itemsInSlot = new List<int>();
@@ -29,33 +30,53 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-        if(item != item.isDefaultItem)
+        if (item != item.isDefaultItem)
         {
-            if(items.Count >= space)
+            if (items.Count >= space)
             {
                 Debug.Log("Inventory Full");
                 return false;
             }
 
-            if(item.stackable == false)
+            if (item.stackable == false)
             {
                 items.Add(item);
                 itemsInSlot.Add(1);
             }
 
-            if(HasItem(item) == false && item.stackable == true)
+            if (HasItem(item) == false && item.stackable == true)
             {
                 items.Add(item);
                 itemsInSlot.Add(0);
             }
 
             item.equipmentManager = GetComponent<EquipmentManager>();
-            if(onItemChangedCallback != null)
+            if (onItemChangedCallback != null)
             {
                 onItemChangedCallback.Invoke();
             }
         }
         return true;
+    }
+
+    public void AddToStack(Item item, int amount)
+    {
+        int index = items.IndexOf(item);
+        Debug.Log(item.name + " is in slot " + index);
+
+        if ((itemsInSlot[index] + amount) >= maxItemsInStack)
+        {
+            itemsInSlot[index] = maxItemsInStack;
+        }
+    }
+
+    public void Remove(Item item)
+    {
+        items.Remove(item);
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
     }
 
     private bool HasItem(Item item)
