@@ -25,10 +25,12 @@ public class ItemPickup : Interactable
         if (item.stackable)
         {
             Inventory.instance.AddToStack(item, amountInStack);
+            PlayerResources.Instance.availableResources.AddResource(item.resourceType, amountInStack);
         }
         if (wasPickedUp)
         {
             Destroy(gameObject);
         }
+        
     }
 }

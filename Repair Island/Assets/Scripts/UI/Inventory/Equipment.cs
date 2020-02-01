@@ -6,16 +6,16 @@ public class Equipment : Item
 
     private Inventory inventory;
 
+    public int damageModifier;
+
     public override void Use()
     {
         base.Use();
-
-        inventory = equipmentManager.inventory;
-        int index = inventory.items.IndexOf(this);
+        EquipmentManager.instance.Equip(this);    
 
         if (!equipmentManager.IsItemEquipped(this))
             equipmentManager.Equip(this);
-
+        RemoveFromInventory();
         equipmentManager.inventory.onItemChangedCallback.Invoke();
     }
 }

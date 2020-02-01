@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
                 onItemChangedCallback.Invoke();
             }
         }
+        //Increment playerResource
         return true;
     }
 
@@ -75,10 +76,19 @@ public class Inventory : MonoBehaviour
         {
             itemsInSlot[index] = maxItemsInStack;
         }
+
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
     }
 
     public void Remove(Item item)
     {
+       
+        int index = items.IndexOf(item);
+        itemsInSlot.RemoveAt(index);
+        
         items.Remove(item);
         if (onItemChangedCallback != null)
         {
@@ -90,4 +100,8 @@ public class Inventory : MonoBehaviour
     {
         return items.Exists(i => i == item);
     }
+
+    //Josh (todo)
+    //Items that are resources (wood, metal, food) we may want to evaluate them when picked up and add them to a global 
+    //list so we don't have to go through the entire inventory list when crafting (See PlayerResources) also remove them when used/dropped
 }

@@ -22,19 +22,14 @@ public class InventorySlot : MonoBehaviour
 
     Item item;
 
-    //private int index;
 
-   // [SerializeField]
-   // private InventoryControlPanel inventoryControlPanel;
 
     private void Awake()
     {
         
         itemName.text = "Empty";
         numberOfItemsInSlotDisplay.text = numberOfIemsInStack.ToString();
-        //inventoryControlPanel = GetComponentInParent<InventoryControlPanel>();
 
-        //int index = inventory.items.IndexOf(item);
     }
     private void Start()
     {
@@ -73,6 +68,7 @@ public class InventorySlot : MonoBehaviour
         {
             numberOfItemsInSlotDisplay.text = numberOfIemsInStack.ToString();
         }
+        //inventory.onItemChangedCallback.Invoke();
     }
 
     public void ClearSlot()
@@ -89,6 +85,10 @@ public class InventorySlot : MonoBehaviour
 
     public void OnRemoveButton()
     {
+        if (item.stackable)
+        {
+
+        }
         inventory.Remove(item);
     }
 
