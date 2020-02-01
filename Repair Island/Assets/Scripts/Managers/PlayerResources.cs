@@ -8,6 +8,7 @@ using UnityEngine;
 public class PlayerResources : MonoBehaviour
 {
     public static PlayerResources Instance = null;
+    public Inventory playerInventory;
 
     void Awake()
     {
@@ -26,6 +27,45 @@ public class PlayerResources : MonoBehaviour
 
     private void Init()
     {
+        playerInventory = Inventory.instance;
+    }
+}
 
+public class PlayerAvailableResources
+    {
+    public enum Resources { Wood= 0, metal, fruit, };
+    public int wood;
+    public int metal;
+    public int fruit;
+        //etc...
+        public int GetResourceCount(Resources resource)
+    {
+        //Todo finish switch case
+        switch (resource)
+        {
+            case Resources.Wood:
+                return wood;
+        }
+        return 0;
+    }
+    public void AddResource(Resources resource, int value)
+    {
+        //Todo finish switch case
+        switch (resource)
+        {
+            case Resources.Wood:
+                 wood += value;
+                break;
+        }
+    }
+    public void UseResource(Resources resource, int value)
+    {
+        //Todo finish switch case
+        switch (resource)
+        {
+            case Resources.Wood:
+                wood -= value;
+                break;
+        }
     }
 }

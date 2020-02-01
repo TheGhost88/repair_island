@@ -99,4 +99,8 @@ public class Inventory : MonoBehaviour
     {
         return items.Exists(i => i == item);
     }
+
+    //Josh (todo)
+    //Items that are resources (wood, metal, food) we may want to evaluate them when picked up and add them to a global 
+    //list so we don't have to go through the entire inventory list when crafting (See PlayerResources) also remove them when used/dropped
 }
