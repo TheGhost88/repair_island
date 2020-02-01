@@ -18,3 +18,4 @@ MonoBehaviour:
   stackable: 0
   equipmentManager: {fileID: 0}
   equipSlot: 0
+  damageModifier: 1
