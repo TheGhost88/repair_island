@@ -22405,6 +22405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 1613480146}
+  inventoryUI: {fileID: 126938633}
 --- !u!1001 &596266864
 PrefabInstance:
   m_ObjectHideFlags: 0
