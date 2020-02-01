@@ -22,11 +22,10 @@ public class TempController : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit, 100))
             {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                ItemPickup itemPickup = hit.collider.GetComponent<ItemPickup>();
                 if (hit.collider.GetComponent<ItemPickup>())
                 {
-
-                    Inventory.instance.Add(hit.collider.GetComponent<ItemPickup>().item);
+                    hit.collider.GetComponent<ItemPickup>().Interact();
                 }
             }
         }

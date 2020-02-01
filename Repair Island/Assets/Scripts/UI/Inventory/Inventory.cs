@@ -69,6 +69,8 @@ public class Inventory : MonoBehaviour
         int index = items.IndexOf(item);
         Debug.Log(item.name + " is in slot " + index);
 
+        itemsInSlot[index] += amount;
+
         if ((itemsInSlot[index] + amount) >= maxItemsInStack)
         {
             itemsInSlot[index] = maxItemsInStack;
