@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359d0d8308f3c3a44b0fd2a49b4eb742, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Wood
   icon: {fileID: 0}
   isDefaultItem: 0
-  stackable: 0
+  stackable: 1
   equipmentManager: {fileID: 0}
