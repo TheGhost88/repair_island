@@ -5,8 +5,19 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [HideInInspector]
-    public EquipmentManager equipmentManager;
+    #region Singleton_ish
+    public static Inventory instance;
+    public void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of Inventory found");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -22,12 +33,7 @@ public class Inventory : MonoBehaviour
         //empty for now
         //Could do some audio or other item setup here
     }
-
-    public void Awake()
-    {
-        equipmentManager = GetComponent<EquipmentManager>();
-    }
-
+       
     public bool Add(Item item)
     {
         if (item != item.isDefaultItem)
