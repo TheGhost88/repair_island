@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class CraftingManager : MonoBehaviour
 {
@@ -12,14 +11,14 @@ public class CraftingManager : MonoBehaviour
 
     public void CreateCraftables()
     {
-        for (int i = 0; i < allGameItems.Count; i++)
+        for(int i = 0; i < allGameItems.Count; i++)
         {
             if (allGameItems[i].canBeCrafted)
             {
                 GameObject obj = Instantiate(craftablePrefab, this.transform);
                 CraftingUIObject craftable = obj.AddComponent<CraftingUIObject>();
                 craftable.craftableItem = allGameItems[i];
-                TextMeshProUGUI[] texts = obj.GetComponentsInChildren<TextMeshProUGUI>();
+                Text[] texts = obj.GetComponentsInChildren<Text>();
                 texts[0].text = allGameItems[i].name;
                 texts[1].text = "Description for " + allGameItems[i].name;
                 string rep = "";
@@ -54,7 +53,7 @@ public class CraftingManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             this.gameObject.SetActive(!this.gameObject.activeSelf);
         }
@@ -62,9 +61,9 @@ public class CraftingManager : MonoBehaviour
 
     private void OnEnable()
     {
-        foreach (CraftingUIObject c in cratfableUIItems)
+        foreach(CraftingUIObject c in cratfableUIItems)
         {
-            if (!c.CanCraftItem())
+            if(!c.CanCraftItem())
             {
                 c.GetComponent<Image>().color = Color.red;
             }

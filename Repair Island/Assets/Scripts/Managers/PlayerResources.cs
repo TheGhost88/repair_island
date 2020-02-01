@@ -15,7 +15,7 @@ public class PlayerResources : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Instance.Start();
+            Instance.Init();
         }
         else
         {
@@ -25,7 +25,7 @@ public class PlayerResources : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+    private void Init()
     {
         playerInventory = Inventory.instance;
         availableResources = new PlayerAvailableResources();
@@ -34,12 +34,10 @@ public class PlayerResources : MonoBehaviour
 [System.Serializable]
 public class PlayerAvailableResources
     {
-<<<<<<< HEAD
-     public enum Resources {NA = 0, Wood, Metal, Fruit, Veggie, Meat, Fiber };
+    public enum Resources {NA = 0, Wood, Metal, Fruit, Veggie, Meat, Fiber };
     public int wood;
     public int metal;
     public int fruit;
-
     public int veggie;
     public int meat;
     public int fiber;
@@ -51,20 +49,22 @@ public class PlayerAvailableResources
 
     //etc...
     public int GetResourceCount(Resources resource)
-=======
-    public enum Resources { Wood= 0, metal, fruit, };
-    public int wood;
-    public int metal;
-    public int fruit;
-        //etc...
-        public int GetResourceCount(Resources resource)
->>>>>>> parent of 3ff5fe6... Start of Craftable system
     {
         //Todo finish switch case
         switch (resource)
         {
             case Resources.Wood:
                 return wood;
+            case Resources.Metal:
+                return metal;
+            case Resources.Fiber:
+                return fiber;
+            case Resources.Fruit:
+                return fruit;
+            case Resources.Veggie:
+                return veggie;
+            case Resources.Meat:
+                return meat;
         }
         return 0;
     }
@@ -76,7 +76,7 @@ public class PlayerAvailableResources
             case Resources.Wood:
                  wood += value;
                 break;
-            case Resources.metal:
+            case Resources.Metal:
                 metal += value;
                 break;
         }

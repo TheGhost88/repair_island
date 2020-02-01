@@ -96,24 +96,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-    public void RemoveFromStack(Item item, int amountToRemove)
-    {
-        int index = items.IndexOf(item);
-        Debug.Log(item.name + " is in slot " + index);
-
-        itemsInSlot[index] -= amountToRemove;
-
-        if (onItemChangedCallback != null)
-        {
-            onItemChangedCallback.Invoke();
-        }
-    }
-
     public bool HasItem(Item item)
-=======
-    private bool HasItem(Item item)
->>>>>>> parent of 3ff5fe6... Start of Craftable system
     {
         return items.Exists(i => i == item);
     }
