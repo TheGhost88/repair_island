@@ -23439,7 +23439,7 @@ GameObject:
   - component: {fileID: 1016700186}
   - component: {fileID: 1016700185}
   m_Layer: 0
-  m_Name: Test Metal Item
+  m_Name: Sword of Not Justice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23459,8 +23459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   interactionTransform: {fileID: 1016700188}
-  item: {fileID: 11400000, guid: aeed9f6e3564275489d24fb0b2bf0701, type: 2}
-  amountInStack: 4
+  item: {fileID: 11400000, guid: b6e7bb8e6f7b99f41ba0c754d2de61a8, type: 2}
+  amountInStack: 0
 --- !u!135 &1016700186
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23550,7 +23550,7 @@ GameObject:
   - component: {fileID: 1066014220}
   - component: {fileID: 1066014221}
   m_Layer: 0
-  m_Name: Test Wood Item
+  m_Name: Sword of Justice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23583,8 +23583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   interactionTransform: {fileID: 1066014223}
-  item: {fileID: 11400000, guid: 9b4b2ac5f6068e642a494c312efee28c, type: 2}
-  amountInStack: 2
+  item: {fileID: 11400000, guid: 50683ffa95ff0854f91d2077e7d8468c, type: 2}
+  amountInStack: 0
 --- !u!212 &1066014222
 SpriteRenderer:
   m_ObjectHideFlags: 0

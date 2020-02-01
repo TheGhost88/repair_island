@@ -84,11 +84,10 @@ public class Inventory : MonoBehaviour
 
     public void Remove(Item item)
     {
-        if (item.stackable)
-        {
-            int index = items.IndexOf(item);
-            itemsInSlot.RemoveAt(index);
-        }
+       
+        int index = items.IndexOf(item);
+        itemsInSlot.RemoveAt(index);
+        
         items.Remove(item);
         if (onItemChangedCallback != null)
         {

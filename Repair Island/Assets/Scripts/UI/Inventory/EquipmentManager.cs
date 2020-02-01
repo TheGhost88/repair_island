@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    public GameObject Player;
+    #region Singleton
+    public static EquipmentManager instance;
 
-    public EquipmentUI equipmentUI;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion    
 
-    public Inventory inventory;
+    //public EquipmentUI equipmentUI;
+
+     public Inventory inventory;
 
     Equipment[] currentEquipment;
 
@@ -18,19 +25,22 @@ public class EquipmentManager : MonoBehaviour
         return currentEquipment;
     }
 
-    public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
+    /*public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
     public OnEquipmentChanged onEquipmentChanged;
+    */
+
+
 
     private void Start()
     {
         int numberOfSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numberOfSlots];
-        inventory = GetComponent<Inventory>();
+        inventory = Inventory.instance;
 
-        for(int i=0; i<currentEquipment.Length; i++)
+        /*for(int i=0; i<currentEquipment.Length; i++)
         {
             equipmentUI.equipmentSlotDisplays[i].equipmentIcon.enabled = false;
-        }
+        }*/
     }
 
     public bool IsItemEquipped(Equipment item)
@@ -41,7 +51,7 @@ public class EquipmentManager : MonoBehaviour
     public void Equip(Equipment newItem)
     {
         newItem.equipmentManager = this;
-        int slotIndex = (int)newItem.equipSlot;
+        int slotIndex = (int)newItem.equipSlot;                
 
         int index = inventory.items.IndexOf(newItem);
 
@@ -52,16 +62,17 @@ public class EquipmentManager : MonoBehaviour
             oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
         }
-
-        if(onEquipmentChanged != null)
+        currentEquipment[slotIndex] = newItem;
+       /* 
+        if (onEquipmentChanged != null)
         {
             onEquipmentChanged.Invoke(newItem, oldItem);
         }
-
-        if (newItem.stackable)
+        */
+        /*if (newItem.stackable)
         {
             equipmentUI.equipmentSlotDisplays[slotIndex].numberOfItemsInStack = null;
-        }
+        }*/
     }
 
     public void Unequip(int slotIndex)
@@ -77,13 +88,16 @@ public class EquipmentManager : MonoBehaviour
 
             currentEquipment[slotIndex] = null;
 
-            if(onEquipmentChanged != null)
+            /*if(onEquipmentChanged != null)
             {
                 onEquipmentChanged.Invoke(null, oldItem);
             }
+            */
+            /*
             equipmentUI.equipmentSlotDisplays[slotIndex].equipmentIcon.enabled = false;
             equipmentUI.equipmentSlotDisplays[slotIndex].equipmentIcon.sprite = null;
             equipmentUI.equipmentSlotDisplays[slotIndex].itemName.text = "Empty";
+            */
         }
     }
 
@@ -92,10 +106,12 @@ public class EquipmentManager : MonoBehaviour
         for (int i = 0; i < currentEquipment.Length; i++)
         {
             Unequip(i);
+            /*
             if(equipmentUI.equipmentSlotDisplays[i].numberOfItemsInStack != null)
             {
                 equipmentUI.equipmentSlotDisplays[i].numberOfItemsInStack.text = "";
             }
+            */
         }
     }
 
