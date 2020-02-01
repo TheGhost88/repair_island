@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
                 onItemChangedCallback.Invoke();
             }
         }
+        //Increment playerResource
         return true;
     }
 

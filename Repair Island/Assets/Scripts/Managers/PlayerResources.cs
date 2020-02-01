@@ -9,7 +9,7 @@ public class PlayerResources : MonoBehaviour
 {
     public static PlayerResources Instance = null;
     public Inventory playerInventory;
-
+    public PlayerAvailableResources availableResources;
     void Awake()
     {
         if (Instance == null)
@@ -28,9 +28,10 @@ public class PlayerResources : MonoBehaviour
     private void Init()
     {
         playerInventory = Inventory.instance;
+        availableResources = new PlayerAvailableResources();
     }
 }
-
+[System.Serializable]
 public class PlayerAvailableResources
     {
     public enum Resources { Wood= 0, metal, fruit, };
@@ -55,6 +56,9 @@ public class PlayerAvailableResources
         {
             case Resources.Wood:
                  wood += value;
+                break;
+            case Resources.metal:
+                metal += value;
                 break;
         }
     }
