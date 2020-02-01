@@ -18,22 +18,27 @@ public class InventorySlot : MonoBehaviour
 
     int numberOfIemsInStack = 0;
 
-    private Inventory inventory;
+    Inventory inventory;
 
     Item item;
 
-    private int index;
+    //private int index;
 
-    [SerializeField]
-    private InventoryControlPanel inventoryControlPanel;
+   // [SerializeField]
+   // private InventoryControlPanel inventoryControlPanel;
 
     private void Awake()
     {
+        
         itemName.text = "Empty";
         numberOfItemsInSlotDisplay.text = numberOfIemsInStack.ToString();
-        inventoryControlPanel = GetComponentInParent<InventoryControlPanel>();
+        //inventoryControlPanel = GetComponentInParent<InventoryControlPanel>();
 
-        int index = inventory.items.IndexOf(item);
+        //int index = inventory.items.IndexOf(item);
+    }
+    private void Start()
+    {
+        inventory = Inventory.instance; 
     }
 
     private void Update()
@@ -56,7 +61,7 @@ public class InventorySlot : MonoBehaviour
     public void AddToNumberInSlot(Item newItem)
     {
         item = newItem;
-        int index = inventory.items.IndexOf(newItem);
+        int index = inventory.items.IndexOf(item);
         numberOfIemsInStack = inventory.itemsInSlot[index];
         numberOfItemsInSlotDisplay.enabled = true;
 
