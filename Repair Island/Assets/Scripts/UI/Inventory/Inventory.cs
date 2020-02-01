@@ -75,10 +75,20 @@ public class Inventory : MonoBehaviour
         {
             itemsInSlot[index] = maxItemsInStack;
         }
+
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
     }
 
     public void Remove(Item item)
     {
+        if (item.stackable)
+        {
+            int index = items.IndexOf(item);
+            itemsInSlot.RemoveAt(index);
+        }
         items.Remove(item);
         if (onItemChangedCallback != null)
         {
