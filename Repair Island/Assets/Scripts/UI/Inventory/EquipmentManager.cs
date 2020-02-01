@@ -83,7 +83,7 @@ public class EquipmentManager : MonoBehaviour
             }
             equipmentUI.equipmentSlotDisplays[slotIndex].equipmentIcon.enabled = false;
             equipmentUI.equipmentSlotDisplays[slotIndex].equipmentIcon.sprite = null;
-            equipmentUI.equipmentSlotDisplays[slotIndex].equipmentIcon.itemName.text = "Empty";
+            equipmentUI.equipmentSlotDisplays[slotIndex].itemName.text = "Empty";
         }
     }
 
