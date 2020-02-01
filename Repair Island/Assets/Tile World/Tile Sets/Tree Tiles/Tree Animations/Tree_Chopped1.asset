@@ -12,7 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Tree_Chopped1
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 884a6d7572618064285069fcc1184b05, type: 3}
+  - {fileID: 21300000, guid: 884a6d7572618064285069fcc1184b05, type: 3}
+  - {fileID: 21300000, guid: 884a6d7572618064285069fcc1184b05, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: 08f75888c22b8da46a0f731e7a99788b, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
+  - {fileID: 21300000, guid: b53eac96f3692b9408bf763eef13f02f, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
