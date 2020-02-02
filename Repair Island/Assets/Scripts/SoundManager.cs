@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource efxSource;
+    public AudioSource musicSource;
+    public static SoundManager instance = null;        //Allows other scripts to call functions from SoundManager.                
+
+    void Awake()
     {
-        
+        //Check if there is already an instance of SoundManager
+        if (instance == null)
+        {
+
+        }
+        else if (instance != this)  //If instance already exists:
+        {
+            //Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
+            Destroy(gameObject);
+        }
+        else
+        {
+            //if not, set it to this.
+            instance = this;
+        }
+
+        //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    //Used to play single sound clips.
+    public void PlaySingleSound(AudioClip clip)
     {
-        
+        //Set the clip of our efxSource audio source to the clip passed in as a parameter.
+        efxSource.clip = clip;
+
+        //Play the clip.
+        efxSource.Play();
     }
 }
