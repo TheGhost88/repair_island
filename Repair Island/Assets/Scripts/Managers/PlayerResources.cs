@@ -15,7 +15,7 @@ public class PlayerResources : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Instance.Start();
+            Instance.Init();
         }
         else
         {
@@ -25,7 +25,7 @@ public class PlayerResources : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+    private void Init()
     {
         playerInventory = Inventory.instance;
         availableResources = new PlayerAvailableResources();
@@ -34,11 +34,10 @@ public class PlayerResources : MonoBehaviour
 [System.Serializable]
 public class PlayerAvailableResources
     {
-     public enum Resources {NA = 0, Wood, Metal, Fruit, Veggie, Meat, Fiber };
+    public enum Resources {NA = 0, Wood, Metal, Fruit, Veggie, Meat, Fiber };
     public int wood;
     public int metal;
     public int fruit;
-
     public int veggie;
     public int meat;
     public int fiber;

@@ -96,19 +96,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RemoveFromStack(Item item, int amountToRemove)
-    {
-        int index = items.IndexOf(item);
-        Debug.Log(item.name + " is in slot " + index);
-
-        itemsInSlot[index] -= amountToRemove;
-
-        if (onItemChangedCallback != null)
-        {
-            onItemChangedCallback.Invoke();
-        }
-    }
-
     public bool HasItem(Item item)
     {
         return items.Exists(i => i == item);

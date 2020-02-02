@@ -12,10 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcd8ec9db6d4e4469b0b4bd60df5aac, type: 3}
   m_Name: SwordOfNotJustice
   m_EditorClassIdentifier: 
+  resourceType: 0
   name: Sword Of Not Justice
   icon: {fileID: 0}
   isDefaultItem: 0
   stackable: 0
   equipmentManager: {fileID: 0}
+  canBeCrafted: 1
+  recipe:
+    Recipe:
+    - resource: 2
+      Item: {fileID: 0}
+      count: 5
+    - resource: 0
+      Item: {fileID: 11400000, guid: 50683ffa95ff0854f91d2077e7d8468c, type: 2}
+      count: 1
   equipSlot: 0
   damageModifier: 1
