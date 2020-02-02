@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 <<<<<<< HEAD
 =======
@@ -41,3 +42,15 @@ public class U2DExtrasPlaceholder
 
 >>>>>>> f6886be83b87b5e94a788d097e172c56705a4108
 */
+=======
+using NUnit.Framework;
+
+public class U2DExtrasPlaceholder 
+{
+    [Test]
+    public void PlaceHolderTest()
+    {
+        Assert.Pass("2D Extras tests are in a separate package.");
+    }
+}
+>>>>>>> parent of 22ca462... animation web in the works
