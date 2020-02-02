@@ -18,7 +18,7 @@ public class ItemPickup : Interactable
         Pickup();
         health--;
         if (health <= 0)
-            DestroyImmediate(this.gameObject);
+            DestroyImmediate(this);
 
         
     }

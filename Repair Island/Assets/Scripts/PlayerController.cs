@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController ThePlayer = null;
+    
 
     [Header("Player Status")]
     public int health;
@@ -30,6 +32,14 @@ public class PlayerController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            InteractWithObject();
+        }
+    }
+
     private void Init()
     {
         health = 100;
@@ -47,10 +57,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var item = collision.collider.GetComponent<Interactable>();
+        var item = collision.collider.GetComponent<ItemPickup>();
         if (item)
         {
             nearByInteractables.Add(item);
+            if (collision.collider.gameObject.GetComponent<Tilemap>())
+            {
+                
+                Tilemap tilemap = collision.collider.gameObject.GetComponent<Tilemap>();
+                
+                Debug.Log("Found Tilemap " + tilemap.name);
+                Vector3Int tilePos = tilemap.WorldToCell(collision.collider.transform.position);
+
+                tilemap.SetTile(tilePos, null);
+                tilemap.RefreshAllTiles();
+                
+            }
 
         }
 
@@ -78,7 +100,15 @@ public class PlayerController : MonoBehaviour
 
     public void InteractWithObject()
     {
-        nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
+        if (nearByInteractables[0])
+        {
+            nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
+        }
+        else
+        {
+            nearByInteractables.RemoveAt(0);
+        }
+       
     }
 
     public void ChangePlayerStatus(PlayerStatus stat, int value)
