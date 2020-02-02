@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
         //Check if there is already an instance of SoundManager
         if (instance == null)
         {
-
+            instance = this;
         }
         else if (instance != this)  //If instance already exists:
         {
