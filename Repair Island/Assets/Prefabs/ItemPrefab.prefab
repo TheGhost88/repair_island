@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2954035219893791545, guid: b9a7b54e74b15064a85af950a5cf7670,
+  m_Sprite: {fileID: -3171732889211498320, guid: 4c35a0f3ab1349947b72d7c6b39a3161,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   interactionTransform: {fileID: 8756391405632559189}
   health: 0
   neededItem: 0
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 1b1fcff2522c03e4f858be2c5c13bbeb, type: 2}
   amountInStack: 0
 --- !u!61 &1150817944451100
 BoxCollider2D:
