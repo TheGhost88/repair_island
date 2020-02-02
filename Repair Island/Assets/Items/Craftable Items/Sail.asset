@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 0
   name: Sail
-  icon: {fileID: 0}
+  icon: {fileID: -3171732889211498320, guid: 4c35a0f3ab1349947b72d7c6b39a3161, type: 3}
   isDefaultItem: 0
   stackable: 0
   equipmentManager: {fileID: 0}
