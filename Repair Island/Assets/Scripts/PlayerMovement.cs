@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 leftRightMove;
     Vector3 upDownMove;
-    public float walkspeed = 3.0f;
+    public float walkspeed = 1.5f;
     public float runspeed = 6.0f;
     int whichAxis = 0; //0 not moving. 1 LR. 2 UD
     public bool canRun = false;
@@ -91,12 +91,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             canRun = true;
-            walkspeed = 6.0f;
+            walkspeed = 3.0f;
         }
         else
         {
             canRun = false;
-            walkspeed = 3.0f;
+            walkspeed = 1.5f;
         }
 
 
