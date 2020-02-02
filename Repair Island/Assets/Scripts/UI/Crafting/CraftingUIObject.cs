@@ -50,7 +50,7 @@ public class CraftingUIObject : MonoBehaviour
             Inventory.instance.Add(craftableItem);
             if(craftableItem.name == "Boat") //win the game
             {
-                StartCoroutine(TriggerWinState());
+                GameManager.Instance.KickOffWinState();
             }
             if (craftableItem.stackable)
             {
@@ -71,11 +71,6 @@ public class CraftingUIObject : MonoBehaviour
         }
     }
 
-    IEnumerator TriggerWinState()
-    {
-        yield return new WaitForSeconds(5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-        yield return null;
-    }
+   
         
 }
