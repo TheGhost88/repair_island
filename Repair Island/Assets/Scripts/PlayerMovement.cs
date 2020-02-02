@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// try to play states through code in a future rendition
+//https://docs.unity3d.com/ScriptReference/Animator.SetTrigger.html
+//https://docs.unity3d.com/ScriptReference/Animator.GetCurrentAnimatorStateInfo.html
+
+
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -28,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
         animator.SetBool("canRun", canRun);
 
+        //animator.SetTrigger("runR"); 
 
 
         if (Input.GetKey(KeyCode.Mouse0) && axeEquiped && (Input.GetAxis("Horizontal") > 0 || facingR == true)) //right swing 
@@ -74,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             slashL.GetComponent<SpriteRenderer>().enabled = false;
             slashR.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else
+        else if(!Input.GetKey(KeyCode.Mouse0))
         {
             facingB = false;
             facingF = false;
@@ -90,8 +96,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            canRun = true;
-            walkspeed = 3.0f;
+             canRun = true;
+             walkspeed = 3.0f;
+            //animator.SetTrigger("sprintR");
         }
         else
         {
