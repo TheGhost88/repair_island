@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8106628783654369713}
   - component: {fileID: 8106628783654369712}
-  - component: {fileID: 990693303342908918}
+  - component: {fileID: 191356339}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -266,7 +266,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8106628783654369714}
   m_CullTransparentMesh: 0
---- !u!114 &990693303342908918
+--- !u!114 &191356339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,13 +275,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8106628783654369714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ddf120456d84943b737d4aa580d4a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 88fa3e42ac1ef044a8bab5b59f516e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: 10
-  maxItemsInStack: 100
-  items: []
-  itemsInSlot: 
+  itemsParent: {fileID: 8106628785137768297}
+  inventoryUI: {fileID: 8106628783654369714}
 --- !u!1 &8106628784617913431
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +305,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8106628784617913431}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -317,7 +315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 211, y: -103.5}
+  m_AnchoredPosition: {x: 236, y: -103.5}
   m_SizeDelta: {x: 119.92, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8106628784617913428
@@ -413,7 +411,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 246, y: -27}
-  m_SizeDelta: {x: -531.2501, y: -151.90001}
+  m_SizeDelta: {x: -531.2501, y: -151.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8106628785137768303
 CanvasRenderer:

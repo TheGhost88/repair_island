@@ -547,7 +547,7 @@ MonoBehaviour:
   slashB: {fileID: 658588617}
   slashL: {fileID: 1390940995}
   slashR: {fileID: 1923248449}
-  axeEquiped: 0
+  axeEquiped: 1
   animator: {fileID: 1440955198860306143}
 --- !u!61 &1440955198860306144
 BoxCollider2D:
