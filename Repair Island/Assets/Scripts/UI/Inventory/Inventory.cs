@@ -72,7 +72,7 @@ public class Inventory : MonoBehaviour
 
         itemsInSlot[index] += amount;
 
-        if ((itemsInSlot[index] + amount) >= maxItemsInStack)
+        if ((itemsInSlot[index]) >= maxItemsInStack)
         {
             itemsInSlot[index] = maxItemsInStack;
         }
