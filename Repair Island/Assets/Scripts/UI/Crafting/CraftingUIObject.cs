@@ -54,8 +54,14 @@ public class CraftingUIObject : MonoBehaviour
             }
             for (int i = 0; i < craftableItem.recipe.Recipe.Count; i++)
             {
-                Inventory.instance.Remove(craftableItem.recipe.Recipe[i].Item);
-                Inventory.instance.RemoveFromStack(craftableItem.recipe.Recipe[i].Item, craftableItem.recipe.Recipe[i].count);
+                Inventory inventory = Inventory.instance;
+                inventory.RemoveFromStack(craftableItem.recipe.Recipe[i].Item, craftableItem.recipe.Recipe[i].count);
+                int index = inventory.items.IndexOf(craftableItem.recipe.Recipe[i].Item);
+                if(inventory.itemsInSlot[index] <= 0)
+                {
+                    inventory.Remove(craftableItem.recipe.Recipe[i].Item);
+                }
+                
                 PlayerResources.Instance.availableResources.UseResource(craftableItem.recipe.Recipe[i].Item.resourceType, craftableItem.recipe.Recipe[i].count);
             }
         }
