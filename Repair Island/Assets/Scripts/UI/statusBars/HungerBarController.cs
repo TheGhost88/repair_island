@@ -8,7 +8,6 @@ public class HungerBarController : MonoBehaviour
     private Slider hungerBar;
     private int currentHGR = 100;
 
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,11 +17,6 @@ public class HungerBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hungerBar.value = currentHGR;
-    }
-
-    public void changeHP(int dHGR)
-    {
-        currentHGR += dHGR;
+        hungerBar.value = PlayerController.ThePlayer.hunger;
     }
 }

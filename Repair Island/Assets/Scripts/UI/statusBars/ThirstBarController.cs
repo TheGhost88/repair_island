@@ -18,11 +18,6 @@ public class ThirstBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        thirstBar.value = currentTRS;
-    }
-
-    public void changeHP(int dTRS)
-    {
-        currentTRS += dTRS;
+        thirstBar.value = PlayerController.ThePlayer.thirst;
     }
 }

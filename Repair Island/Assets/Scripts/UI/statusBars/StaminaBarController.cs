@@ -18,11 +18,6 @@ public class StaminaBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        staminaBar.value = currentSTM;
-    }
-
-    public void changeHP(int dSTM)
-    {
-        currentSTM += dSTM;
+        staminaBar.value = PlayerController.ThePlayer.stamina;
     }
 }
