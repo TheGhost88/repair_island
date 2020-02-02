@@ -1,6 +1,7 @@
 ﻿
 using System;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [System.Serializable]
 public class ItemPickup : Interactable
@@ -15,12 +16,16 @@ public class ItemPickup : Interactable
 
     private int zeroHealthChecker;
 
+
+
     public override void Interact(NecessaryItem itemUsed = NecessaryItem.NA)
     {
         base.Interact();
 
         //Josh: Recommend reducing interactable health so we can remove it when exhausted, obviously things like a water collector we won't want to destroy that
         //Also recommend checking what item the player used on this interactable
+        Vector3Int tilePos = tilemap.layoutGrid.WorldToCell(this.gameObject.transform.position);
+        tilemap.SetTile(tilePos, ReplacementTileAnimated);
         Pickup();
         health--;
         //if (health <= 0)
