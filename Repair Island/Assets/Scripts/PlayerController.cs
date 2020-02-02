@@ -45,6 +45,25 @@ public class PlayerController : MonoBehaviour
             nearByInteractables.Add(item);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var item = collision.collider.GetComponent<Interactable>();
+        if (item)
+        {
+            nearByInteractables.Add(item);
+
+        }
+
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        var item = collision.collider.GetComponent<Interactable>();
+        if (item)
+            nearByInteractables.Remove(item);
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         var item = other.GetComponent<Interactable>();
