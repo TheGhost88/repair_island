@@ -26,7 +26,7 @@ MonoBehaviour:
       count: 10
     - resource: 0
       Item: {fileID: 11400000, guid: 30db2d3507cc2a74a8ff8be1d237c988, type: 2}
-      count: 40
+      count: 10
     - resource: 0
       Item: {fileID: 11400000, guid: 1b1fcff2522c03e4f858be2c5c13bbeb, type: 2}
       count: 1

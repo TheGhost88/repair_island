@@ -31,4 +31,16 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void KickOffWinState()
+    {
+        StartCoroutine(TriggerWinState());
+    }
+
+    public IEnumerator TriggerWinState()
+    {
+        yield return new WaitForSeconds(5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        yield return null;
+    }
 }
