@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boat
   m_EditorClassIdentifier: 
   resourceType: 0
-  name: New Item
-  icon: {fileID: 0}
+  name: Boat
+  icon: {fileID: 9043736765399905710, guid: b9a7b54e74b15064a85af950a5cf7670, type: 3}
   isDefaultItem: 0
   stackable: 0
   equipmentManager: {fileID: 0}

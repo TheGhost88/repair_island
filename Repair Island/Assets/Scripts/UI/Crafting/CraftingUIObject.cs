@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftingUIObject : MonoBehaviour
 {
     public Item craftableItem;
 
+    public Button craftButton;
+
+    private void Start()
+    {
+        craftButton = GetComponentInChildren<Button>();
+        craftButton.onClick.AddListener(CraftButtonOnClick);
+    }
 
     public bool CanCraftItem()
     {
@@ -29,8 +37,21 @@ public class CraftingUIObject : MonoBehaviour
         return true;
     }
 
+    void CraftButtonOnClick()
+    {
+        CraftItem();
+    }
+
     public void CraftItem()
     {
         // Remove crafting recipe items/resources from inventory
+        if (CanCraftItem())
+        {
+            Inventory.instance.Add(craftableItem);
+            if (craftableItem.stackable)
+            {
+                Inventory.instance.AddToStack(craftableItem, 1);
+            }
+        }
     }
 }

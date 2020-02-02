@@ -9,18 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359d0d8308f3c3a44b0fd2a49b4eb742, type: 3}
-  m_Name: Nail
+  m_Script: {fileID: 11500000, guid: bfcd8ec9db6d4e4469b0b4bd60df5aac, type: 3}
+  m_Name: Pickaxe
   m_EditorClassIdentifier: 
   resourceType: 0
-  name: Nail
-  icon: {fileID: -2954035219893791545, guid: b9a7b54e74b15064a85af950a5cf7670, type: 3}
+  name: New Item
+  icon: {fileID: 0}
   isDefaultItem: 0
-  stackable: 1
+  stackable: 0
   equipmentManager: {fileID: 0}
-  canBeCrafted: 1
+  canBeCrafted: 0
   recipe:
-    Recipe:
-    - resource: 2
-      Item: {fileID: 11400000, guid: aeed9f6e3564275489d24fb0b2bf0701, type: 2}
-      count: 1
+    Recipe: []
+  equipSlot: 0
+  damageModifier: 0
