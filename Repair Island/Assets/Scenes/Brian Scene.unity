@@ -204,7 +204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7972590442210952385, guid: b9a7b54e74b15064a85af950a5cf7670,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -678,7 +678,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -22317,7 +22317,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7972590442210952385, guid: b9a7b54e74b15064a85af950a5cf7670,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22998,6 +22998,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 0}
+  availableResources:
+    wood: 0
+    metal: 0
+    fruit: 0
+    veggie: 10
+    meat: 10
+    fiber: 10
 --- !u!4 &645412963
 Transform:
   m_ObjectHideFlags: 0
@@ -23776,7 +23783,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7972590442210952385, guid: b9a7b54e74b15064a85af950a5cf7670,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -23797,7 +23804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016700184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.81, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23887,7 +23894,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -5161663816859551980, guid: b9a7b54e74b15064a85af950a5cf7670,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -24072,7 +24079,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7972590442210952385, guid: b9a7b54e74b15064a85af950a5cf7670,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

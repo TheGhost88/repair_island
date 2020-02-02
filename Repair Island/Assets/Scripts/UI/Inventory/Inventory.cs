@@ -109,7 +109,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private bool HasItem(Item item)
+    public bool HasItem(Item item)
     {
         return items.Exists(i => i == item);
     }
