@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jacob Scene.unity
     guid: 1fd7e421b5f82da42854b3c114475d35
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 79bab533e63722d418053d2757711279
   m_configObjects: {}

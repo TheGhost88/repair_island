@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -3171732889211498320, guid: 4c35a0f3ab1349947b72d7c6b39a3161,
+  m_Sprite: {fileID: -5605448012911245753, guid: 0e3c3acc64e3755408a70b1c2f206742,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,10 +96,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   interactionTransform: {fileID: 8756391405632559189}
+  tilemap: {fileID: 0}
+  ReplacementTileAnimated: {fileID: 0}
+  ReplacementSprite: {fileID: 0}
   health: 0
   neededItem: 0
   SoundClips: []
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 6f5db2d138167c848804908001f13d89, type: 2}
   amountInStack: 0
 --- !u!61 &1150817944451100
 BoxCollider2D:
@@ -118,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.93, y: 0.45}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
