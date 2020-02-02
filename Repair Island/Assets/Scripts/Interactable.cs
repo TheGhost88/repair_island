@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Interactable : MonoBehaviour
 {
@@ -9,12 +10,23 @@ public class Interactable : MonoBehaviour
     bool isFocus = false;
     //Transform player;
 
+    [Header("Tilemap Interactions")]
+    public Tilemap tilemap;
+    public AnimatedTile ReplacementTileAnimated;
+    Tile ReplacementTile;
+    public Sprite ReplacementSprite;
+
     [Header("Spawner Properties")]
     public int health;
     public enum NecessaryItem { NA = 0, Sword, Axe, Hammer, Pickaxe, Sythe, Shovel }
     public NecessaryItem neededItem;
 
     bool hasInteracted = false;
+
+    private void Awake()
+    {
+        ReplacementTile = ScriptableObject.CreateInstance<Tile>();
+    }
 
     public virtual void Interact(NecessaryItem itemUsed = NecessaryItem.NA) //by default we don't check for a tool
     {

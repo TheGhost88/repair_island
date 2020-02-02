@@ -71,8 +71,8 @@ public class PlayerController : MonoBehaviour
         {
             nearByInteractables.Add(item);
             if (collision.collider.gameObject.GetComponent<Tilemap>())
-            {              
-                
+            {      
+              
                 tilemap = collision.collider.gameObject.GetComponent<Tilemap>();
                 
                 Debug.Log("Found Tilemap " + tilemap.name);
@@ -80,10 +80,7 @@ public class PlayerController : MonoBehaviour
                 //tilemap.RefreshAllTiles();
                 
             }
-
-        }
-
-
+        }        
     }
 
     IEnumerator TreeFalling(Tilemap tilemap, Vector3Int tilePos)
@@ -115,16 +112,19 @@ public class PlayerController : MonoBehaviour
     {
         if (nearByInteractables[0])
         {
-            
             Vector3Int tilePos = tilemap.layoutGrid.WorldToCell(this.gameObject.transform.position);
 
-            if (tilemap.GetSprite(tilePos) == ReplacementSprite)
+            if (tilemap.GetSprite(tilePos) == nearByInteractables[0].ReplacementSprite)
             {
                 return;
             }
+            
+            nearByInteractables[0].tilemap = tilemap;
+           // nearByInteractables[0].ReplacementSprite = ReplacementSprite;
+            //nearByInteractables[0].ReplacementTileAnimated = ReplacementTileAnimated;*/
 
-            tilemap.SetTile(tilePos, ReplacementTileAnimated);
-            StartCoroutine(TreeFalling(tilemap, tilePos));
+            //tilemap.SetTile(tilePos, ReplacementTileAnimated);
+            //StartCoroutine(TreeFalling(tilemap, tilePos));
             nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
         }
         else

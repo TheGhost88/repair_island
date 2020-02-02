@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
         //animator.SetTrigger("runR"); 
 
-
-        if (Input.GetKey(KeyCode.Mouse0) && axeEquiped && (Input.GetAxis("Horizontal") > 0 || facingR == true)) //right swing 
+        //changed key from mouse0 to space
+        if (Input.GetKey(KeyCode.Space) && axeEquiped && (Input.GetAxis("Horizontal") > 0 || facingR == true)) //right swing 
         {
             facingB = false;
             facingF = false;
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             slashL.GetComponent<SpriteRenderer>().enabled = false;
             slashR.GetComponent<SpriteRenderer>().enabled = true;
         }
-        else if (Input.GetKey(KeyCode.Mouse0) && axeEquiped && (Input.GetAxis("Horizontal") < 0 || facingL == true)) //left swing 
+        else if (Input.GetKey(KeyCode.Space) && axeEquiped && (Input.GetAxis("Horizontal") < 0 || facingL == true)) //left swing 
         {
             facingB = false;
             facingF = false;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             slashL.GetComponent<SpriteRenderer>().enabled = true;
             slashR.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else if (Input.GetKey(KeyCode.Mouse0) && axeEquiped && (Input.GetAxis("Vertical") < 0 || facingF == true)) //Forward swing 
+        else if (Input.GetKey(KeyCode.Space) && axeEquiped && (Input.GetAxis("Vertical") < 0 || facingF == true)) //Forward swing 
         {
             facingB = false;
             facingF = true;
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             slashL.GetComponent<SpriteRenderer>().enabled = false;
             slashR.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else if (Input.GetKey(KeyCode.Mouse0) && axeEquiped && (Input.GetAxis("Vertical") > 0 || facingB == true)) //back swing 
+        else if (Input.GetKey(KeyCode.Space) && axeEquiped && (Input.GetAxis("Vertical") > 0 || facingB == true)) //back swing 
         {
             facingB = true;
             facingF = false;
@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             slashL.GetComponent<SpriteRenderer>().enabled = false;
             slashR.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else if(!Input.GetKey(KeyCode.Mouse0))
+        else if(!Input.GetKey(KeyCode.Space))
         {
             facingB = false;
             facingF = false;
