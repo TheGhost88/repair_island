@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CraftingManager : MonoBehaviour
 {
     public GameObject craftablePrefab;
+    public Transform craftingParent;
     public List<Item> allGameItems;
     List<CraftingUIObject> cratfableUIItems = new List<CraftingUIObject>();
 
@@ -16,9 +18,10 @@ public class CraftingManager : MonoBehaviour
             if (allGameItems[i].canBeCrafted)
             {
                 GameObject obj = Instantiate(craftablePrefab, this.transform);
+                obj.transform.parent = craftingParent;
                 CraftingUIObject craftable = obj.AddComponent<CraftingUIObject>();
                 craftable.craftableItem = allGameItems[i];
-                Text[] texts = obj.GetComponentsInChildren<Text>();
+                TextMeshProUGUI[] texts = obj.GetComponentsInChildren<TextMeshProUGUI>();
                 texts[0].text = allGameItems[i].name;
                 texts[1].text = "Description for " + allGameItems[i].name;
                 string rep = "";

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boat
   m_EditorClassIdentifier: 
   resourceType: 0
-  name: New Item
+  name: Boat
   icon: {fileID: 0}
   isDefaultItem: 0
   stackable: 0
