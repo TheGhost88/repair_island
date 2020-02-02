@@ -1891,7 +1891,8 @@ GameObject:
   - component: {fileID: 1440955198860306145}
   - component: {fileID: 1440955198860306144}
   - component: {fileID: 1440955198860306143}
-  - component: {fileID: 1983793682}
+  - component: {fileID: 3219919671383520667}
+  - component: {fileID: 3222183973026735698}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -2028,7 +2029,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &1983793682
+--- !u!114 &3219919671383520667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440955198860306142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15286c9bd1d4f14a8c60401188d7dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  stamina: 0
+  thirst: 0
+  hunger: 0
+  nearByInteractables: []
+--- !u!50 &3222183973026735698
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
