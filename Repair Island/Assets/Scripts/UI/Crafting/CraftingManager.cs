@@ -72,4 +72,9 @@ public class CraftingManager : MonoBehaviour
             }
         }
     }
+
+    public void CraftItem()
+    {
+        
+    }
 }
