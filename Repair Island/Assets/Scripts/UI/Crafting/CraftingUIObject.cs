@@ -57,8 +57,8 @@ public class CraftingUIObject : MonoBehaviour
                 Inventory inventory = Inventory.instance;
                 inventory.RemoveFromStack(craftableItem.recipe.Recipe[i].Item, craftableItem.recipe.Recipe[i].count);
                 int index = inventory.items.IndexOf(craftableItem.recipe.Recipe[i].Item);
-                if (inventory.itemsInSlot[index])
-                 inventory.Remove(craftableItem.recipe.Recipe[i].Item);
+                if ((inventory.itemsInSlot[index] - craftableItem.recipe.Recipe[i].count) <=0)
+                    inventory.Remove(craftableItem.recipe.Recipe[i].Item);
                 
                 PlayerResources.Instance.availableResources.UseResource(craftableItem.recipe.Recipe[i].Item.resourceType, craftableItem.recipe.Recipe[i].count);
             }

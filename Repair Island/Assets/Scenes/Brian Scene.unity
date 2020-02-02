@@ -22385,7 +22385,7 @@ MonoBehaviour:
   playerInventory: {fileID: 0}
   availableResources:
     wood: 0
-    metal: 10
+    metal: 0
     fruit: 0
     veggie: 0
     meat: 0
