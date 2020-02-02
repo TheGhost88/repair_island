@@ -78,7 +78,10 @@ public class PlayerController : MonoBehaviour
 
     public void InteractWithObject()
     {
-        nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
+        if (nearByInteractables[0])
+            nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
+        else
+            nearByInteractables.RemoveAt(0);
     }
 
     public void ChangePlayerStatus(PlayerStatus stat, int value)
