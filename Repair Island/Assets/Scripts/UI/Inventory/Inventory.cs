@@ -96,6 +96,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     public void RemoveFromStack(Item item, int amountToRemove)
     {
         int index = items.IndexOf(item);
@@ -110,6 +111,9 @@ public class Inventory : MonoBehaviour
     }
 
     public bool HasItem(Item item)
+=======
+    private bool HasItem(Item item)
+>>>>>>> parent of 3ff5fe6... Start of Craftable system
     {
         return items.Exists(i => i == item);
     }
