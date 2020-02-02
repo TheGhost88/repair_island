@@ -23918,7 +23918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   maxItemsInStack: 100
-  items: []
+  items:
+  - {fileID: 11400000, guid: 50683ffa95ff0854f91d2077e7d8468c, type: 2}
   itemsInSlot: 
 --- !u!4 &1068399234
 Transform:
