@@ -49,7 +49,12 @@ public class PlayerController : MonoBehaviour
     {
         var item = collision.collider.GetComponent<Interactable>();
         if (item)
+        {
             nearByInteractables.Add(item);
+
+        }
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
