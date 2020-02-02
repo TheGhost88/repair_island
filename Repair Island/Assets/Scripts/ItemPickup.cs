@@ -5,9 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class ItemPickup : Interactable
 {
+    public AudioClip[] SoundClips;
+
+    private SoundManager sm;
+
     public Item item;
 
     public int amountInStack = 0;
+
+    private int zeroHealthChecker;
 
     public override void Interact(NecessaryItem itemUsed = NecessaryItem.NA)
     {
@@ -20,7 +26,8 @@ public class ItemPickup : Interactable
         if (health <= 0)
             DestroyImmediate(this);
 
-        
+        zeroHealthChecker = health;
+        PlayItemSound();
     }
 
     //Do code here for whatever you need the item to do when interacted with
@@ -37,5 +44,41 @@ public class ItemPickup : Interactable
             PlayerResources.Instance.availableResources.AddResource(item.resourceType, amountInStack);
         }
         
+    }
+
+    public void PlayItemSound()
+    {
+        if(item.name == "Wood")
+        {
+            if(zeroHealthChecker <= 0)
+            {
+                sm.PlaySingleSound(SoundClips[3]);
+            }
+            else
+            {
+                sm.PlaySingleSound(SoundClips[0]);
+            }
+        }
+        else if (item.name == "Metal")
+        {
+            if (zeroHealthChecker <= 0)
+            {
+                sm.PlaySingleSound(SoundClips[4]);
+            }
+            else
+            {
+                sm.PlaySingleSound(SoundClips[1]);
+            }
+        }
+        else if (item.name == "Fiber")
+        {
+            sm.PlaySingleSound(SoundClips[2]);
+        }
+        else
+        {
+            // If we are not picking any of the
+            // previous options, then what
+            // are we picking up?
+        }
     }
 }
