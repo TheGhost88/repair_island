@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour
         hunger = 100;
     }
 
-    private void OnTriggerEnter2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         var item = other.GetComponent<Interactable>();
         if (item)
             nearByInteractables.Add(item);
     }
 
-    private void OnTriggerExit2D(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         var item = other.GetComponent<Interactable>();
         if (item)
