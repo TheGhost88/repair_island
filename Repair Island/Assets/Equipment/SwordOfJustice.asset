@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcd8ec9db6d4e4469b0b4bd60df5aac, type: 3}
   m_Name: SwordOfJustice
   m_EditorClassIdentifier: 
+  resourceType: 0
   name: Sword Of Justice
   icon: {fileID: 0}
   isDefaultItem: 0
