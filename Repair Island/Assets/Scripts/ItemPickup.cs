@@ -7,9 +7,7 @@ using UnityEngine.Tilemaps;
 public class ItemPickup : Interactable
 {
     public AudioClip[] SoundClips;
-
-    private SoundManager sm;
-
+    
     public Item item;
 
     public int amountInStack = 0;
@@ -57,27 +55,27 @@ public class ItemPickup : Interactable
         {
             if(zeroHealthChecker <= 0)
             {
-                sm.PlaySingleSound(SoundClips[3]);
+                SoundManager.instance.PlaySingleSound(SoundClips[3]);
             }
             else
             {
-                sm.PlaySingleSound(SoundClips[0]);
+                SoundManager.instance.PlaySingleSound(SoundClips[0]);
             }
         }
         else if (item.name == "Metal")
         {
             if (zeroHealthChecker <= 0)
             {
-                sm.PlaySingleSound(SoundClips[4]);
+                SoundManager.instance.PlaySingleSound(SoundClips[4]);
             }
             else
             {
-                sm.PlaySingleSound(SoundClips[1]);
+                SoundManager.instance.PlaySingleSound(SoundClips[1]);
             }
         }
         else if (item.name == "Fiber")
         {
-            sm.PlaySingleSound(SoundClips[2]);
+            SoundManager.instance.PlaySingleSound(SoundClips[2]);
         }
         else
         {

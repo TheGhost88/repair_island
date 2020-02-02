@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 0
   name: Boat
-  icon: {fileID: 9043736765399905710, guid: b9a7b54e74b15064a85af950a5cf7670, type: 3}
+  icon: {fileID: -5605448012911245753, guid: 0e3c3acc64e3755408a70b1c2f206742, type: 3}
   isDefaultItem: 0
   stackable: 0
   equipmentManager: {fileID: 0}
@@ -26,7 +26,7 @@ MonoBehaviour:
       count: 10
     - resource: 0
       Item: {fileID: 11400000, guid: 30db2d3507cc2a74a8ff8be1d237c988, type: 2}
-      count: 40
+      count: 10
     - resource: 0
       Item: {fileID: 11400000, guid: 1b1fcff2522c03e4f858be2c5c13bbeb, type: 2}
       count: 1
