@@ -15,7 +15,7 @@ public class PlayerResources : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Instance.Init();
+            Instance.Start();
         }
         else
         {
@@ -25,7 +25,7 @@ public class PlayerResources : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Init()
+    private void Start()
     {
         playerInventory = Inventory.instance;
         availableResources = new PlayerAvailableResources();
