@@ -22,6 +22,8 @@ public class InventorySlot : MonoBehaviour
 
     public Item item;
 
+    private InventoryControlPanel inventoryControlPanel;
+
 
 
     private void Awake()
@@ -29,6 +31,8 @@ public class InventorySlot : MonoBehaviour
         
         itemName.text = "Empty";
         numberOfItemsInSlotDisplay.text = numberOfIemsInStack.ToString();
+        inventoryControlPanel = GetComponentInChildren<InventoryControlPanel>();
+        inventoryControlPanel.gameObject.SetActive(false);
 
     }
     private void Start()
@@ -91,8 +95,12 @@ public class InventorySlot : MonoBehaviour
     public void UseItem()
     {
         if(item != null)
-        {
+        {            
             item.Use();
+        }
+        if (item.canBeCrafted)
+        {
+            inventoryControlPanel.gameObject.SetActive(true);
         }
     }
 }
