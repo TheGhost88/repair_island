@@ -7,6 +7,7 @@ using TMPro;
 public class CraftingManager : MonoBehaviour
 {
     public GameObject craftablePrefab;
+    public Transform craftingParent;
     public List<Item> allGameItems;
     List<CraftingUIObject> cratfableUIItems = new List<CraftingUIObject>();
 
@@ -17,6 +18,7 @@ public class CraftingManager : MonoBehaviour
             if (allGameItems[i].canBeCrafted)
             {
                 GameObject obj = Instantiate(craftablePrefab, this.transform);
+                obj.transform.parent = craftingParent;
                 CraftingUIObject craftable = obj.AddComponent<CraftingUIObject>();
                 craftable.craftableItem = allGameItems[i];
                 TextMeshProUGUI[] texts = obj.GetComponentsInChildren<TextMeshProUGUI>();
