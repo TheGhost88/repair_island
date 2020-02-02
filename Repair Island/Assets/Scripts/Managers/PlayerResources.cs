@@ -44,7 +44,7 @@ public class PlayerAvailableResources
 
     public PlayerAvailableResources()
     {
-        wood = metal = fruit = veggie = meat = fiber = 10;
+        wood = metal = fruit = veggie = meat = fiber = 0;
     }
 
     //etc...
@@ -74,10 +74,22 @@ public class PlayerAvailableResources
         switch (resource)
         {
             case Resources.Wood:
-                 wood += value;
+                wood += value;
                 break;
             case Resources.Metal:
                 metal += value;
+                break;
+            case Resources.Fiber:
+                fiber += value;
+                break;
+            case Resources.Fruit:
+                fruit += value;
+                break;
+            case Resources.Veggie:
+                veggie += value;
+                break;
+            case Resources.Meat:
+                meat += value;
                 break;
         }
     }
@@ -88,6 +100,21 @@ public class PlayerAvailableResources
         {
             case Resources.Wood:
                 wood -= value;
+                break;
+            case Resources.Metal:
+                metal -= value;
+                break;
+            case Resources.Fiber:
+                fiber -= value;
+                break;
+            case Resources.Fruit:
+                fruit -= value;
+                break;
+            case Resources.Veggie:
+                veggie -= value;
+                break;
+            case Resources.Meat:
+                meat -= value;
                 break;
         }
     }
