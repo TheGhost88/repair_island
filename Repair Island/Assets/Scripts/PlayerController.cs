@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public AnimatedTile ReplacementTileAnimated;
     Tile ReplacementTile;
     public Sprite ReplacementSprite;
+    Tilemap tilemap;
 
     private void Awake()
     {
@@ -70,21 +71,12 @@ public class PlayerController : MonoBehaviour
         {
             nearByInteractables.Add(item);
             if (collision.collider.gameObject.GetComponent<Tilemap>())
-            {
+            {              
                 
-                
-                Tilemap tilemap = collision.collider.gameObject.GetComponent<Tilemap>();
+                tilemap = collision.collider.gameObject.GetComponent<Tilemap>();
                 
                 Debug.Log("Found Tilemap " + tilemap.name);
-                Vector3Int tilePos = tilemap.layoutGrid.WorldToCell(this.gameObject.transform.position);
 
-                if(tilemap.GetSprite(tilePos) == ReplacementSprite)
-                {
-                    return;
-                }
-
-                tilemap.SetTile(tilePos, ReplacementTileAnimated);
-                StartCoroutine(TreeFalling(tilemap, tilePos));
                 //tilemap.RefreshAllTiles();
                 
             }
@@ -123,6 +115,16 @@ public class PlayerController : MonoBehaviour
     {
         if (nearByInteractables[0])
         {
+            
+            Vector3Int tilePos = tilemap.layoutGrid.WorldToCell(this.gameObject.transform.position);
+
+            if (tilemap.GetSprite(tilePos) == ReplacementSprite)
+            {
+                return;
+            }
+
+            tilemap.SetTile(tilePos, ReplacementTileAnimated);
+            StartCoroutine(TreeFalling(tilemap, tilePos));
             nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
         }
         else

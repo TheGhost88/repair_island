@@ -17,8 +17,8 @@ public class ItemPickup : Interactable
         //Also recommend checking what item the player used on this interactable
         Pickup();
         health--;
-        if (health <= 0)
-            DestroyImmediate(this);
+        //if (health <= 0)
+            //DestroyImmediate(this);
 
         
     }
