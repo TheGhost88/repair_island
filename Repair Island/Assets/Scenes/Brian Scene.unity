@@ -22830,8 +22830,8 @@ MonoBehaviour:
   craftablePrefab: {fileID: 6938523806348667068, guid: 6f8da8259d6934f478609d3cccf27a5d,
     type: 3}
   allGameItems:
-  - {fileID: 11400000, guid: 50683ffa95ff0854f91d2077e7d8468c, type: 2}
-  - {fileID: 11400000, guid: b6e7bb8e6f7b99f41ba0c754d2de61a8, type: 2}
+  - {fileID: 11400000, guid: 6f5db2d138167c848804908001f13d89, type: 2}
+  - {fileID: 11400000, guid: 46c326c7e2c93524c9cb18213247ea63, type: 2}
   - {fileID: 11400000, guid: aeed9f6e3564275489d24fb0b2bf0701, type: 2}
   - {fileID: 11400000, guid: 9b4b2ac5f6068e642a494c312efee28c, type: 2}
 --- !u!4 &645412963

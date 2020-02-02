@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nail
   m_EditorClassIdentifier: 
   resourceType: 0
-  name: New Item
+  name: Nail
   icon: {fileID: 0}
   isDefaultItem: 0
   stackable: 1
