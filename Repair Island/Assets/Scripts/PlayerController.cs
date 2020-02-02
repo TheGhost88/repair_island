@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
 
     public List<Interactable> nearByInteractables = new List<Interactable>();
 
+    [Header("Tile Replacement")]
+    public AnimatedTile ReplacementTileAnimated;
+    Tile ReplacementTile;
+    public Sprite ReplacementSprite;
+    Tilemap tilemap;
+
     private void Awake()
     {
         if (ThePlayer == null)
@@ -46,6 +52,9 @@ public class PlayerController : MonoBehaviour
         stamina = 100;
         thirst = 100;
         hunger = 100;
+
+        ReplacementTile = ScriptableObject.CreateInstance<Tile>();
+        ReplacementTile.sprite = ReplacementSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -62,21 +71,25 @@ public class PlayerController : MonoBehaviour
         {
             nearByInteractables.Add(item);
             if (collision.collider.gameObject.GetComponent<Tilemap>())
-            {
+            {              
                 
-                Tilemap tilemap = collision.collider.gameObject.GetComponent<Tilemap>();
+                tilemap = collision.collider.gameObject.GetComponent<Tilemap>();
                 
                 Debug.Log("Found Tilemap " + tilemap.name);
-                Vector3Int tilePos = tilemap.WorldToCell(collision.collider.transform.position);
 
-                tilemap.SetTile(tilePos, null);
-                tilemap.RefreshAllTiles();
+                //tilemap.RefreshAllTiles();
                 
             }
 
         }
 
 
+    }
+
+    IEnumerator TreeFalling(Tilemap tilemap, Vector3Int tilePos)
+    {
+        yield return new WaitForSeconds(0.5f);
+        tilemap.SetTile(tilePos, ReplacementTile);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -102,6 +115,16 @@ public class PlayerController : MonoBehaviour
     {
         if (nearByInteractables[0])
         {
+            
+            Vector3Int tilePos = tilemap.layoutGrid.WorldToCell(this.gameObject.transform.position);
+
+            if (tilemap.GetSprite(tilePos) == ReplacementSprite)
+            {
+                return;
+            }
+
+            tilemap.SetTile(tilePos, ReplacementTileAnimated);
+            StartCoroutine(TreeFalling(tilemap, tilePos));
             nearByInteractables[0].Interact(/*Not from josh to include the equiped item here */);
         }
         else

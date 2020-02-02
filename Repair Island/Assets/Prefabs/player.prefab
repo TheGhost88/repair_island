@@ -611,6 +611,9 @@ MonoBehaviour:
   thirst: 0
   hunger: 0
   nearByInteractables: []
+  ReplacementTileAnimated: {fileID: 11400000, guid: a7d0f733d777e4e47acec60b8173e676,
+    type: 2}
+  ReplacementSprite: {fileID: 21300000, guid: 4ce50e36757b4ff43b7a675b0383fa95, type: 3}
 --- !u!50 &3222183973026735698
 Rigidbody2D:
   serializedVersion: 4
