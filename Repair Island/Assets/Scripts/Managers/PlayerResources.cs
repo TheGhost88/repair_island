@@ -15,7 +15,7 @@ public class PlayerResources : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Instance.Init();
+            Instance.Start();
         }
         else
         {
@@ -25,7 +25,7 @@ public class PlayerResources : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Init()
+    private void Start()
     {
         playerInventory = Inventory.instance;
         availableResources = new PlayerAvailableResources();
@@ -34,18 +34,38 @@ public class PlayerResources : MonoBehaviour
 [System.Serializable]
 public class PlayerAvailableResources
     {
-    public enum Resources { Wood= 0, metal, fruit, };
+     public enum Resources {NA = 0, Wood, Metal, Fruit, Veggie, Meat, Fiber };
     public int wood;
     public int metal;
     public int fruit;
-        //etc...
-        public int GetResourceCount(Resources resource)
+
+    public int veggie;
+    public int meat;
+    public int fiber;
+
+    public PlayerAvailableResources()
+    {
+        wood = metal = fruit = veggie = meat = fiber = 10;
+    }
+
+    //etc...
+    public int GetResourceCount(Resources resource)
     {
         //Todo finish switch case
         switch (resource)
         {
             case Resources.Wood:
                 return wood;
+            case Resources.Metal:
+                return metal;
+            case Resources.Fiber:
+                return fiber;
+            case Resources.Fruit:
+                return fruit;
+            case Resources.Veggie:
+                return veggie;
+            case Resources.Meat:
+                return meat;
         }
         return 0;
     }
@@ -57,7 +77,7 @@ public class PlayerAvailableResources
             case Resources.Wood:
                  wood += value;
                 break;
-            case Resources.metal:
+            case Resources.Metal:
                 metal += value;
                 break;
         }

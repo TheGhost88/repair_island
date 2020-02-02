@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
@@ -12,6 +14,9 @@ public class Item : ScriptableObject
 
     public EquipmentManager equipmentManager;
 
+    public bool canBeCrafted;
+    public RecipeHolder recipe;
+
     public virtual void Use()
     {
         Debug.Log("Using" + name);
@@ -21,4 +26,17 @@ public class Item : ScriptableObject
     {
         Inventory.instance.Remove(this);
     }
+
+}
+[System.Serializable]
+public class RecipeHolder
+{
+    public List<Recipe> Recipe = new List<Recipe>();
+}
+[System.Serializable]
+public class Recipe
+{
+    public PlayerAvailableResources.Resources resource;
+    public Item Item;
+    public int count;
 }

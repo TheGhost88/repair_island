@@ -9,14 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfcd8ec9db6d4e4469b0b4bd60df5aac, type: 3}
-  m_Name: SwordOfJustice
+  m_Script: {fileID: 11500000, guid: 359d0d8308f3c3a44b0fd2a49b4eb742, type: 3}
+  m_Name: Nail
   m_EditorClassIdentifier: 
   resourceType: 0
-  name: Sword Of Justice
+  name: New Item
   icon: {fileID: 0}
   isDefaultItem: 0
-  stackable: 0
+  stackable: 1
   equipmentManager: {fileID: 0}
-  equipSlot: 0
-  damageModifier: 2
+  canBeCrafted: 1
+  recipe:
+    Recipe:
+    - resource: 2
+      Item: {fileID: 11400000, guid: aeed9f6e3564275489d24fb0b2bf0701, type: 2}
+      count: 1

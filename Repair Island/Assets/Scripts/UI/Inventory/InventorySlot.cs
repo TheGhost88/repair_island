@@ -84,11 +84,7 @@ public class InventorySlot : MonoBehaviour
     }
 
     public void OnRemoveButton()
-    {
-        if (item.stackable)
-        {
-
-        }
+    {        
         inventory.Remove(item);
     }
 
